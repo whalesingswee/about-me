@@ -1,104 +1,85 @@
 # Frontend Guidelines Questionnaire
-A one-page questionnaire to help your team establish effective frontend guidelines, so that you can write consistent & cohesive code together.
+This is an answer based on Brad Frost’s [Frontend Guidelines Questionnarie]
 
 ## HTML
 ### HTML Principles
-- **What are some general principles your team should follow when writing HTML?** *(for example, authoring semantic HTML5 markup, accessibility, etc. See [these](http://www.yellowshoe.com.au/standards/#html) [resources](http://codeguide.co/#html) for [inspiration](http://manuals.gravitydept.com/code/html))*
-
+I write Semantic markups, by that I mean using the correct and meaningful tag on the document disregarding its css style. Also, I use tab for the indention, personally I’d prefer 4 spaces, but kinda lazy to fix that on Sublime text because using tabs on javascript and css would definitely more handy.
 
 ### HTML Tools
-- **Are you using an HTML preprocessor** *(such as [HAML](http://haml.info/), [Jade](http://jade-lang.com/), etc)*?
-- **Are you using a templating engine** *(such as [Mustache](https://mustache.github.io/), [Handlebars](http://handlebarsjs.com/), etc)*?
-- **Does your backend architecture influence the frontend markup in any way** (for example, WordPress will add `wp-paginate` to a class in your markup)? If so, can you highlight these conventions? 
+I use Jade for the HTML preprocessor and uses Mustache for the template engine, it is very convenient specially when it comes to render the datas back from server.
 
 ### HTML Style
-- **Spaces or Tabs?**
-- **What does HTML commenting look like?** 
+ - double quotes on HTML
+- strictly no uppercases
+- use data the right way
+- comment like this `<!-- .end-of-class -->` 
 
 ---------------
 
 ## CSS 
 
 ### CSS Principles
-- **What are some general principles your team should follow when writing CSS?** *(For example, modularity, avoiding long selector strings, etc. See [these](http://cssguidelin.es/) [resources](http://www.yellowshoe.com.au/standards/#css) [for](http://manuals.gravitydept.com/code/css) [inspiration](http://codeguide.co/#css))*
+- I do not oppose to long string selectors, but structure must be clear. every element should be able to be plugged and play. Naming should be general, I clearly divided component should be functional naming while layout should be presentational naming. 
 
 ### CSS Methodology
-- **Is your team using a CSS methodology** *(such as [SMACSS](https://smacss.com/), [BEM](https://en.bem.info/method/), or [OOCSS](http://oocss.org/)*? If yes, where is the documentation for that methodology?
-- **Are you deviating from the methodology in any way?** If so, can you highlight these conventions?
+- I use BEM methodology with some mix up of ITCSS.
 
 ### CSS Tools
-- **Is the team using a preprocessor** *(such as [Sass](http://sass-lang.com/) or [Less](http://lesscss.org/))*?
-- **What are the guidelines for using that preprocessor** *(check out [Sass Guidelines](http://sass-guidelin.es/) for inspiration)*?
-- **Are you using a CSS base** *(such as [Normalize](https://necolas.github.io/normalize.css/) or a [reset](http://meyerweb.com/eric/tools/css/reset/))*?
-- **Are you using any CSS postprocessors** *(such as Prefixfree or [Autoprefixer](https://github.com/postcss/autoprefixer))*?
-- **Are there specific CSS techniques you're utilizing** *(such as [critical CSS](https://www.smashingmagazine.com/2015/08/understanding-critical-css/))*?
+- I am using SASS and recently moved POSTCSS with use of `precss`, clearly because I am not used to `cssnext` yet.
+- I personally use CSS reset and normalise mix because our project requires a lot of heavy redesign, resetting everything would definitely help.
+- In our Gulp, aside from using autoprefixer, we use several mixins and SVG sprites, SVG icon-fonts to make our css flow even better.
 
 ### CSS Frameworks
-- **Is the team using a framework** *(such as [Bootstrap](http://getbootstrap.com/) or [Foundation](http://foundation.zurb.com/))*? If yes, where is the documentation for that framework?
-- **Are you deviating from the framework in any way?** If so, can you highlight these conventions?
+- I do use Bootstrap and Foundation, but that’s before, I find it dirty and unable to modify easily if our site is fully redesigned, I think framework are fast and easy for those regular site, but if the design is way different from the typical ones, I think you should move on and create your own with style guide.
 
 ### CSS Style
-- **Spaces or Tabs?**
-- **Spacing around rules?**
-- **[Grouping](https://smacss.com/book/formatting#grouping) properties?**
-- **What does CSS commenting look like?** 
+- I use Tabs, clearly I think readability is important, and I’m used to it. 
 
 ---------------
 
 ## JavaScript
 
 ### JavaScript Principles
-- **What are some general principles your team should follow when writing JavaScript?** *(See [these](https://github.com/airbnb/javascript) [resources](https://github.com/rwaldron/idiomatic.js) for [inspiration](https://github.com/styleguide/javascript))*
 
 
 ### JavaScript tools
-- **Are you using a JavaScript framework** *(such as [jQuery](http://jquery.com/), [Ember](http://emberjs.com/), [Angular](https://angularjs.org/), etc)*?
-- **Where is the documentation for those frameworks?**
-- **Are you using any polyfills or shims** *(such as [any of these](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills))*?
-- **What third-party scripts are dependencies for your project** *(such as scripts for form validation, graphs, animation, etc)*?
+- I use Angular and recently learning React.
+- Vue.js is my next.
+- I am following John Papa’s guide for Angular.
+- Modernizr is a must.
+- I like to use Greensock and Velocity for animating.
+- I like to use SnapSVG for the SVG animation.
 
 ### JavaScript Style 
-*(See [these](https://github.com/airbnb/javascript) [resources](https://github.com/rwaldron/idiomatic.js) for [inspiration](https://github.com/styleguide/javascript))*
-- **Spaces or Tabs?**
-- **What does JS commenting look like?** 
-- [What patterns are you following](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)?
+- I always use tab
+- Commeting always starts with `// this is comment` 
+- Use `camelCase` for functions while all `lowercase_underscore` for variables.
 
 ---------------
 
 ## Tooling
-- **Are you using a task runner** *(such as [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/))*?
-- **Are you using a dependency manager** *(such as [Bower](http://bower.io/) or [Composer](https://getcomposer.org/))*
-- **Are you using any scaffolding tools** *(such as [Yeoman](http://yeoman.io/))*
-- **Are you using any tools to reinforce frontend style** *(such as [Editor Config](http://editorconfig.org/) or [linters](https://github.com/CSSLint/csslint))*?
-- **Are any other specific pieces of software that are needed to work on this project?**
+- I used both Grunt and Gulp, but I use Gulp heavily these days.
+- I use Bower for managing the plugins
+- Nope, I don’t use Yeoman
 
 ---------------
 
 ## Version control
-- **What version control system are you using for your frontend code** *(such as [Git](https://git-scm.com/) or [Subversion](https://subversion.apache.org/))*?
-- **Where is your version-controlled code hosted** *(such  as [Github](https://github.com/) or [Bitbucket](https://bitbucket.org/))* ?
-- **Do you use a version control workflow** *(such as [gitflow](http://nvie.com/posts/a-successful-git-branching-model/), [centralized](https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow), [feature-branch](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), etc)*?
-- **Who's responsible for managing and governing the version controlled code?**?
-- **Where are issues tracked**?
+- I use Git as it was my version control system in my entire web life.
+- I usually host my open source code project on Github while we are using Bitbucket server on work.
+- So far no one is managing pull request issues since we do not require that yet, most of our project could be done by communicating in person, but I do aware we will be needing that in future.
+- Issues are tracked base on Jira or Github.
 
 -----------
 
 ## Support and Optimization
-It's important to recognize the difference between ["support" and "optimization"](http://bradfrost.com/blog/mobile/support-vs-optimization/). You should do your best to support as many environments as possible while simultaneously optimizing for the environments that make the most sense for your business and users. 
-
-- **What browsers are you *optimizing* for?** 
-- **What devices are you *optimizing* for?** 
-- **Are you using a [graded browser support](https://github.com/yui/yui3/wiki/Graded-Browser-Support) system?**
-- **Are there specific components that require [more specific grading](https://www.filamentgroup.com/lab/grade-the-components.html)?**
+- I optimise the site mainly for webkit and mozilla only, though I am aware of IE users, but I expect to support to the latest IE browsers only. 
+- I mainly focus on iPhone, barely on Android because I do not have the device.
 
 -----------
 
 ## Documentation
-- **Are you using a [pattern library tool](http://styleguides.io/tools.html) to document your front-end architecture**?
-- **Where does your documentation live**? What are the links to the documentation?
-- **Who's responsible for maintaining and governing the documentation**?
-- **What happens when the guidelines are updated**?
+- I encourage my team to create a style guide every time we created a component.
+- I always create a readme.md for the user so that they would have a summary of the project and how it is going to be used/installed.
 
 -----------
-
-*Feel free to modify or extend (such as adding specific sections for performance, accessibility, etc) this document for your own organization's needs. For questions, comments, additions, and corrections, please open an issue on Github and/or reach out to [@brad_frost](https://twitter.com/brad_frost) on Twitter.*
