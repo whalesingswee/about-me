@@ -1,5 +1,5 @@
 # Frontend Guidelines Questionnaire
-This is an answer based on Brad Frost’s [Frontend Guidelines Questionnarie]
+This is an answer based on Brad Frost’s [Frontend Guidelines Questionnarie](https://github.com/bradfrost/frontend-guidelines-questionnaire)
 
 ## HTML
 ### HTML Principles
